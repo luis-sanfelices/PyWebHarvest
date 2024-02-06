@@ -1,0 +1,1 @@
+from pywebharvest.extractors.beatifulsoup_extractor import SoupExtractor
