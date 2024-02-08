@@ -2,7 +2,6 @@
 
 ## Project structure
 
-Project Structure
 This project is structured into three main folders, each serving a distinct purpose. While segregating these folders into separate repositories might offer better organization, for the ease of review, they have been consolidated within this repository.
 
 ### pywebharvest_ops
