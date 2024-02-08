@@ -2,7 +2,6 @@
 
 ## Project structure
 
-Project Structure
 This project is structured into three main folders, each serving a distinct purpose. While segregating these folders into separate repositories might offer better organization, for the ease of review, they have been consolidated within this repository.
 
 ### pywebharvest_ops
@@ -20,7 +19,8 @@ This folder contains the data extraction pipelines.
 
 ## Seting up the environment
 
-**_NOTE:_** The following commands have been designed for use in PowerShell. Some adjustments may be necessary for Unix systems.
+> [!NOTE] 
+>The following commands have been designed for use in PowerShell. Some adjustments may be necessary for Unix systems.
 
 ### Prerequisites:
 - Python >=3.6
@@ -35,8 +35,10 @@ Due to limitations with the size of the provided zip file and the Google Drive A
 
 Once the zip file has been copied into the ops folder, execute the following commands to build the image and deploy the web clone locally:
 
-```docker build -f .\pywebharvest_ops\Dockerfile . -t web-clone-server ```
-```docker run -it --rm -d -p 9000:80 --name web-clone web-clone-server```
+```
+docker build -f .\pywebharvest_ops\Dockerfile . -t web-clone-server
+docker run -it --rm -d -p 9000:80 --name web-clone web-clone-server
+```
 
 As the pywebharvest_tools have been developed as a package, execute the installation command:
 
@@ -50,9 +52,10 @@ Feel free to reach out if you encounter any issues during the setup process.
 
 For running the pipeline, preferably move to the pipeline folder and use the python command:
 
-```cd  .\pywebhaverst_pipelines\src\boots_web_harvesting\```
-
-```python pipeline.py``
+```
+cd  .\pywebhaverst_pipelines\src\boots_web_harvesting\
+python pipeline.py
+```
 
 You can still run the pipeline from the root, but the output file will be stored there.
 
@@ -62,18 +65,24 @@ Since pywebharvest_pipelines and pywebharvest_tools have been developed as separ
 
 #### Pipeline tests
 From the root:
-```cd  .\pywebhaverst_pipelines\```
-```pytest .\tests\```
+```
+cd  .\pywebhaverst_pipelines\
+pytest .\tests\
+```
 
 #### Package tests
 From the root:
-```cd  .\pywebhaverst_tools\```
-```pytest .\tests\```
+```
+cd  .\pywebhaverst_tools\
+pytest .\tests\
+```
 
 
 ### Stop Web clone container
 
-```docker stop web-clone```
-```docker rmi $(docker images --format "{{.Repository}}:{{.Tag}}"|findstr "web-clone-server")```
+```
+docker stop web-clone
+docker rmi $(docker images --format "{{.Repository}}:{{.Tag}}"|findstr "web-clone-server")
+```
 
 
