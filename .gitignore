@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 # ignore web clone
-ops/Sleep_Aid_Clone/
+pywebharvest_ops/Sleep_Aid_Clone/

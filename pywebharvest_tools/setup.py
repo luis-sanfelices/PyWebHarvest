@@ -12,6 +12,10 @@ setup_options = dict(
         "Operating System :: OS Independent", 
     ],
     python_requires= ">=3.6",
+    install_requires = [
+        "requests>=2.31.0,<3",
+        "beautifulsoup4>=4.12.3,<5"
+    ],
     packages=find_packages()
 )
 

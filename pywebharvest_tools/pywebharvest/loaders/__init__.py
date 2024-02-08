@@ -1,0 +1,1 @@
+from pywebharvest.loaders.json_loader import JsonLoader

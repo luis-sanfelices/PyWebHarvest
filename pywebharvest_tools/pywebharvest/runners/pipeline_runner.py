@@ -21,8 +21,8 @@ class Pipeline(object):
     def _set_logging(self):
         """ set loggin pipeline configuration """
         today = datetime.now().strftime("%Y-%m-%d")
-        log_path = f"{os.getcwd()}/{self.name}/logs"
-        log_file = f"{log_path}/{today}.log"
+        log_path = f"{os.getcwd()}/logs"
+        log_file = f"{log_path}/{self.name}_{today}.log"
 
         # Create log folder if not exist
         if not os.path.exists(log_path):
@@ -43,10 +43,14 @@ class Pipeline(object):
 
     def start(self):
         """ start pipeline """
-
+        print(f"Pipeline '{self.name}' started...")
         self._set_logging()
         try:
-            return self.etl()
+            result = self.etl()
+            print(f"Pipeline '{self.name}' completed successfully with resul:\n {result}")
+            return result
         except Exception as e:
-            logging.error(e)
+            error_message = f"Error occurred in pipeline '{self.name}': {e}"
+            print(error_message)
+            logging.error(error_message)
             raise e
