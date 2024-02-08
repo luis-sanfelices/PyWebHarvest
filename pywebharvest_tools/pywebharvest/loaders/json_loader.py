@@ -30,7 +30,7 @@ class JsonLoader:
         :raises Exception: If an error occurs during loading.
         """
         try:
-            file_path = f"{self.path}/{self.file_name}"
+            file_path = os.path.join(self.path,self.file_name)
             if not os.path.exists(self.path):
                 os.makedirs(self.path)
             with open(file_path, self.load_mode, **self.file_options) as outfile:

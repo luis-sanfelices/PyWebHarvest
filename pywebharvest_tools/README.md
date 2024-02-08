@@ -1,6 +1,6 @@
-# PyWebHarvest
+# PyWebHarvest_tools
 
-This package contains a data extraction pipeline designed to extract information from web pages using BeautifulSoup, perform transformations, and load the data into JSON files. It is organized into three main components: loaders, extractors, and runners. 
+This package contains tools designed to extract information from web pages using BeautifulSoup, perform transformations, and load the data into JSON files. It is organized into three main components: loaders, extractors, and runners. 
 
 ## Loaders
 

@@ -46,7 +46,7 @@ class Pipeline(object):
         self._set_logging()
         try:
             result = self.etl()
-            print(f"Pipeline '{self.name}' completed successfully with resul:\n {result}")
+            print(f"Pipeline '{self.name}' completed successfully with result:\n{result}")
             return result
         except Exception as e:
             error_message = f"Error occurred in pipeline '{self.name}': {e}"
