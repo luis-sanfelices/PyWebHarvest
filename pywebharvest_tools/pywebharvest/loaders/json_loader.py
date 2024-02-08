@@ -19,8 +19,8 @@ class JsonLoader:
         self.path = path
         self.file_name = file_name
         self.load_mode = load_mode
-        self.file_options = load_options.get("file_options", None)
-        self.json_options = load_options.get("json_options", None)
+        self.file_options = load_options.get("file_options", {})
+        self.json_options = load_options.get("json_options", {})
 
     def load(self, data: dict):
         """
@@ -41,4 +41,4 @@ class JsonLoader:
         except PermissionError as e:
             raise PermissionError(f"No permission to write to file '{self.file_name}'.") from e
         except Exception as e:
-            raise Exception(f"Something went wrong when loading data into JSON file {self.file}") from e
+            raise Exception(f"Something went wrong when loading data into JSON file {self.file_name}") from e

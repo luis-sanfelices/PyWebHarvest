@@ -1,4 +1,3 @@
-""" pipeline class """
 from datetime import datetime
 import os
 import logging

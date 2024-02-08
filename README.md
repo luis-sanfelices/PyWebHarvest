@@ -18,3 +18,5 @@ docker run -it --rm -d -p 9000:80 --name web-clone web-clone-server
 docker build -f .\pywebharvest_ops\Dockerfile . -t web-clone-server 
 
 pip install .\pywebharvest_tools\
+
+pytest .\tests\
