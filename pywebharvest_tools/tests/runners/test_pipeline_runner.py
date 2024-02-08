@@ -25,7 +25,7 @@ def test_start_success(mock_etl_main_function, capsys, pipeline):
     captured = capsys.readouterr()
     assert result == "SUCCESS"
     assert "Pipeline 'test_pipeline' started..." in captured.out
-    assert "Pipeline 'test_pipeline' completed successfully with resul:\n SUCCESS\n" in captured.out
+    assert "Pipeline 'test_pipeline' completed successfully with result:\nSUCCESS\n" in captured.out
     assert not captured.err
 
 def test_start_failure(mock_etl_main_function, capsys, pipeline):

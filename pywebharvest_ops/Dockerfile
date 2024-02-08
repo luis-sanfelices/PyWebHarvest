@@ -1,2 +1,2 @@
 FROM nginx:latest
-COPY ops/Sleep_Aid_Clone /usr/share/nginx/html/
+COPY pywebharvest_ops/Sleep_Aid_Clone /usr/share/nginx/html/
